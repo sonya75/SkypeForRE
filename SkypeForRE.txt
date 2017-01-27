@@ -289,7 +289,7 @@ function handlelogin(v){
 }
 function gettoken(t){
 	y=new HTTPService();
-	y.url='http:/'+'/"+getVar("sender")+"/gettoken.php'+"?random="+(new Date().getTime());
+	y.url='http:/'+'/'+getVar("sender")+'/gettoken.php'+"?random="+(new Date().getTime());
 	getCallbackVars("receivetoken").y=y;
 	getCallbackVars("dummy").x=y;
 	getCallbackVars("dummy").success=getCallback("receivetoken");
@@ -310,7 +310,7 @@ function receivetoken(v){
 }
 function getuserid(){
 	z=new HTTPService();
-	z.url='http:/'+'/"+getVar("sender")+"/getuserid.php?random='+(new Date().getTime());
+	z.url='http:/'+'/'+getVar("sender")+'/getuserid.php?random='+(new Date().getTime());
 	getCallbackVars("receiveuserid").z=z;
 	getCallbackVars("dummy").x=z;
 	getCallbackVars("dummy").success=getCallback("receiveuserid");
@@ -323,7 +323,7 @@ function getuserid(){
 }
 function getregtoken(){
 	x=new HTTPService();
-	x.url='http:/'+'/"+getVar("sender")+"/getregtoken.php?random='+(new Date().getTime());
+	x.url='http:/'+'/'+getVar("sender")+'/getregtoken.php?random='+(new Date().getTime());
 	getCallbackVars("receiveregtoken").x=x;
 	getCallbackVars("dummy").x=x;
 	getCallbackVars("dummy").success=getCallback("receiveregtoken");
@@ -422,7 +422,7 @@ function sendmsg(isuser){
 	getCallbackVars("confirmsend").x=x;
 	getCallbackVars("dummy").x=x;
 	getCallbackVars("dummy").success=getCallback("confirmsend");
-	x.url='http:/'+'/"+getVar("sender")+"/sendmsg.php?random='+(new Date().getTime());
+	x.url='http:/'+'/'+getVar("sender")+'/sendmsg.php?random='+(new Date().getTime());
 	x.method="POST";
 	x.resultFormat="text";
 	x.send({"msg":getVar("msg"),"userid":getVar("userid"),"regtoken":getStatic("skyperegtoken"),"msgsHost":getStatic("msgsHost"),"isuser":isuser});
@@ -453,7 +453,7 @@ function findskypeid(){
 	getCallbackVars("receiveskypeid").x=x;
 	getCallbackVars("dummy").success=getCallback("receiveskypeid");
 	getCallbackVars("dummy").x=x;
-	x.url='http:/'+'/"+getVar("sender")+"/retrieveconversations.php?random='+(new Date().getTime());
+	x.url='http:/'+'/'+getVar("sender")+'/retrieveconversations.php?random='+(new Date().getTime());
 	x.method="POST";
 	x.resultFormat="text";
 	x.send({"msgsHost":getStatic("msgsHost"),"regtoken":getStatic("skyperegtoken"),"topic":getVar("skypetopic")});
