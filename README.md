@@ -28,3 +28,6 @@ include SkypeForRE
 ```
 
 Running this script will send the message "Hello World" to a group you are in which has the string "Official RE Support" in its topic name.
+
+* It can't login to you skype account if it has 2-step authentication.
+* If your skype account is linked to a Microsoft live account, it may not be able to login always, because of Microsoft's security restrictions when logging in from new locations to a Microsoft live account. Better to just use a skype account which is not linked to a Microsoft live account.
